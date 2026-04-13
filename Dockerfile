@@ -1,6 +1,7 @@
 # Aşama 1: Derleme
 FROM golang:alpine AS builder
 WORKDIR /app
+RUN apk add --no-cache gcc musl-dev
 COPY go.mod go.sum ./
 RUN go mod download
 COPY . .
